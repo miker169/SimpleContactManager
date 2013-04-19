@@ -11,9 +11,9 @@
         function ContactsViewModel() {
             var self = this;
             self.contacts = ko.observableArray([]);
-            self.addContact = function() {
+            self.addContact = function () {
                 $.post("api/contacts",
-                    $("addContact").serialize(),
+                    $("#addContact").serialize(),
                     function(value) {
                         self.contacts.push(value);
                     },
@@ -33,7 +33,11 @@
             });
         }
 
-        ko.applyBindings(new ContactsViewModel());
+        $(document).ready(function() {
+            ko.applyBindings(new ContactsViewModel());
+        });
+
+       
     </script>
 }
 
@@ -47,7 +51,7 @@
             <span data-bind="text: $data.Zip || 'Zip?'"></span>
         </div>
         <div data-bind="if: $data.Email">
-            <a data-bind="attr: { href=: 'mailto:' + Email }, text: Email"></a>
+            <a data-bind="attr: { href: 'mailto:' + Email }, text: Email"></a>
         </div>
         <div data-bind="ifnot: $data.Email"><span>Email?</span></div>
         <div data-bind="if: $data.Twitter">
