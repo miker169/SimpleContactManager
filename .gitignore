@@ -36,6 +36,9 @@ x64/
 *.vssscc
 .builds
 
+# Windows Azure Publish Settings contain security keys for accessing  your windows azure account
+.publishsettings
+
 # Visual C++ cache files
 ipch/
 *.aps
@@ -52,6 +55,11 @@ ipch/
 
 # ReSharper is a .NET coding add-in
 _ReSharper*
+
+# Nuget 
+# Also consider letting Nuget automatically restore missing packages for you
+## http://docs.nuget.org/docs/workflows/using-nuget-without-commiting-packages/
+packages/
 
 # NCrunch
 *.ncrunch*
